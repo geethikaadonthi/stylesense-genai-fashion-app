@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StyleSense</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>StyleSense : Generative AI–Powered Fashion Recommendation System</h1>
+        <p class="note">
+          Personalized styling advice, outfit recommendations, image-based analysis, and trend-aware insights.
+        </p>
+      </section>
+
+      <section class="results">
+        <article class="card">
+          <h2>Preference-Based Recommendations</h2>
+          <form id="recommend-form">
+            <div class="grid">
+              <label>Style
+                <select name="style" required>
+                  <option value="casual">Casual</option>
+                  <option value="formal">Formal</option>
+                  <option value="streetwear">Streetwear</option>
+                </select>
+              </label>
+              <label>Occasion
+                <input name="occasion" value="Office meetup" required />
+              </label>
+              <label>Weather
+                <input name="weather" value="Warm" required />
+              </label>
+              <label>Budget
+                <input name="budget" value="Mid-range" required />
+              </label>
+            </div>
+            <button type="submit">Generate Suggestions</button>
+          </form>
+          <div id="recommendation-output" class="note">Awaiting input...</div>
+        </article>
+
+        <article class="card">
+          <h2>Image-Based Analysis</h2>
+          <form id="image-form" enctype="multipart/form-data">
+            <label>Style goal
+              <input name="style_goal" value="Smart casual" required />
+            </label>
+            <label>Upload outfit image
+              <input type="file" name="image" accept="image/png,image/jpeg,image/webp" required />
+            </label>
+            <button type="submit">Analyze Image</button>
+          </form>
+          <div id="image-output" class="note">Upload an image to receive guidance.</div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
